@@ -1,0 +1,219 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.7;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #343a40;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 1.5rem 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+.container {
+    display: flex;
+    flex-grow: 1;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 1400px;
+    background-color: #ffffff;
+    box-shadow: 0 0 15px rgba(0,0,0,0.08);
+    border-radius: 8px;
+    overflow: hidden; /* Ensures child elements adhere to border-radius */
+}
+
+#patterns-nav {
+    width: 300px; /* Increased width for better readability */
+    min-width: 250px;
+    padding: 25px;
+    border-right: 1px solid #dee2e6;
+    background-color: #f1f3f5;
+    overflow-y: auto; /* Scroll for nav if content is too long */
+}
+
+#patterns-nav h2, #patterns-nav h3 {
+    color: #0056b3; /* Darker blue for headings */
+    margin-top: 0;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #ced4da;
+}
+
+#patterns-nav h3 {
+    margin-top: 20px;
+    font-size: 1.1em;
+}
+
+#patterns-nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#patterns-nav ul li {
+    margin-bottom: 10px;
+}
+
+#patterns-nav ul li a {
+    text-decoration: none;
+    color: #007bff;
+    display: block;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+#patterns-nav ul li a:hover,
+#patterns-nav ul li a.active {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+}
+
+#pattern-details {
+    flex-grow: 1;
+    padding: 30px;
+    overflow-y: auto; /* Scroll for main content */
+}
+
+#pattern-details article h2 {
+    color: #343a40;
+    border-bottom: 3px solid #007bff;
+    padding-bottom: 15px;
+    margin-top: 0;
+    font-size: 1.8em;
+}
+
+#pattern-details article h3 {
+    color: #495057;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    font-size: 1.4em;
+}
+
+#pattern-details article p {
+    margin-bottom: 15px;
+    color: #495057;
+}
+
+.code-examples-container {
+    margin-top: 20px;
+    border: 1px solid #e9ecef;
+    border-radius: 5px;
+}
+
+.language-tabs {
+    display: flex;
+    background-color: #e9ecef;
+    border-bottom: 1px solid #ced4da;
+    padding-left: 10px; /* Align tabs with content padding */
+}
+
+.tab-button {
+    padding: 12px 18px;
+    cursor: pointer;
+    border: none;
+    background-color: transparent; /* Tabs are part of the container */
+    border-bottom: 3px solid transparent; /* For active indicator */
+    margin-right: 5px; /* Spacing between tabs */
+    font-size: 1em;
+    color: #495057;
+    transition: color 0.2s, border-bottom-color 0.2s;
+}
+.tab-button:hover {
+    color: #0056b3;
+}
+
+.tab-button.active {
+    font-weight: bold;
+    color: #007bff;
+    border-bottom: 3px solid #007bff; /* Active tab indicator */
+}
+
+.code-block {
+    display: none; /* Hidden by default */
+    background-color: #282c34; /* VS Code-like dark */
+    color: #abb2bf;     /* Light gray text for code */
+    padding: 20px;
+    border-radius: 0 0 5px 5px; /* Rounded bottom corners */
+    overflow-x: auto;
+    font-family: 'Consolas', 'Monaco', 'Courier New', Courier, monospace;
+    font-size: 0.95em; /* Slightly larger for readability */
+    line-height: 1.5;
+}
+
+.code-block.active {
+    display: block;
+}
+
+pre {
+    margin: 0;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+code {
+    font-family: inherit; /* Inherit from pre */
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #343a40;
+    color: #f8f9fa;
+    font-size: 0.9em;
+    margin-top: auto; /* Pushes footer to bottom if content is short */
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) { /* Adjusted breakpoint for better tablet view */
+    .container {
+        flex-direction: column;
+        width: 95%;
+    }
+    #patterns-nav {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #dee2e6;
+        max-height: 350px;
+    }
+    #pattern-details {
+        padding: 20px; /* Slightly reduce padding on smaller screens */
+    }
+    header h1 {
+        font-size: 1.8em;
+    }
+}
+
+@media (max-width: 576px) { /* Mobile specific */
+    #patterns-nav {
+        padding: 15px;
+    }
+     #patterns-nav h2, #patterns-nav h3 {
+        font-size: 1.2em;
+    }
+    #patterns-nav ul li a {
+        padding: 6px 10px;
+    }
+    #pattern-details article h2 {
+        font-size: 1.5em;
+    }
+    #pattern-details article h3 {
+        font-size: 1.2em;
+    }
+    .tab-button {
+        padding: 10px 12px;
+        font-size: 0.9em;
+    }
+}
